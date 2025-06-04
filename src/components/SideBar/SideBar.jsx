@@ -16,7 +16,7 @@ const SideBar = ({
 }) => {
   const setPrice = (data) => {
     setPriceFilter([data.min || 0, data.max || 9000000]);
-    isOpened(false);
+    open(false);
   };
   const { register, handleSubmit } = useForm();
   const includeHandler = (ins) => {
