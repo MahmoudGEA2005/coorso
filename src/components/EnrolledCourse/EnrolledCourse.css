@@ -1,0 +1,33 @@
+.enrolled-course {
+  display: flex;
+  gap: 10px;
+  margin-block: 10px;
+  box-shadow: var(--main-shadow);
+  padding: 10px;
+  margin: 10px;
+  min-height: 100px;
+  position: relative;
+}
+
+.enrolled-course h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.enrolled-course img {
+  width: 35%;
+  object-fit: cover;
+}
+
+.del {
+  color: rgb(244, 66, 66);
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: var(--main-duration);
+}
+
+.del:hover {
+  transform: scale(1.2);
+}

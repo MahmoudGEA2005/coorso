@@ -1,0 +1,35 @@
+.enrolled {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background-color: #fafafa;
+  transition: var(--main-duration);
+}
+
+.enrolled .special {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.enrolled span {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+.enrolled.enrolled-open {
+  right: 0;
+}
+
+.e-courses {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}

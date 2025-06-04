@@ -1,0 +1,66 @@
+.course {
+  transition: var(--main-duration);
+  cursor: pointer;
+  box-shadow: var(--main-shadow);
+  border-radius: var(--main-radius);
+  padding-bottom: 10px;
+  min-height: 350px;
+  position: relative;
+}
+
+@media (max-width: 484px) {
+  .course {
+    padding-bottom: 70px;
+  }
+}
+
+.course img {
+  object-fit: cover;
+}
+
+.course:hover {
+  transform: scale(1.02);
+}
+
+.course-info {
+  padding: 10px;
+}
+
+.course h3 {
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+.course .by {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.course-info p:not(strong p) {
+  color: #555;
+  padding-block: 10px;
+  line-height: 1.5;
+}
+
+.course-info strong p {
+  color: #444;
+  padding-left: 5px;
+}
+
+.enroll {
+  position: absolute;
+  width: calc(100% - 20px);
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.enroll strong {
+  padding-left: 5px;
+}
+
+.enroll button {
+  padding-inline: 20px;
+}

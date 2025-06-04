@@ -1,0 +1,20 @@
+.search-fn input[type="search"] {
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  box-shadow: var(--main-shadow);
+  border-radius: var(--main-radius);
+  width: 300px;
+  transition: var(--main-duration);
+}
+
+@media (max-width: 768px) {
+  .search-fn input[type="search"] {
+    width: 220px;
+  }
+}
+
+.search-fn input[type="search"]:hover,
+.search-fn input[type="search"]:focus {
+  transform: scale(1.02);
+}

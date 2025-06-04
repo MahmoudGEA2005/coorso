@@ -1,0 +1,31 @@
+.content {
+  flex: 75%;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.filters-btn {
+  background-color: var(--main-color);
+  width: fit-content;
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  display: none;
+  cursor: pointer;
+  transition: var(--main-duration);
+}
+
+.filters-btn:hover {
+  background-color: darkblue;
+}
+
+@media (max-width: 992px) {
+  .filters-btn {
+    display: block;
+  }
+}

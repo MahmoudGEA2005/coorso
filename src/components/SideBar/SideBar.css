@@ -1,0 +1,122 @@
+aside {
+  flex: 25%;
+  margin-right: 50px;
+  background: #fff;
+  transition: var(--main-duration);
+}
+
+@media (max-width: 992px) {
+  aside {
+    position: fixed;
+    z-index: 99999;
+    height: 100vh;
+    width: 35%;
+    top: 0;
+    left: -100%;
+    padding: 20px;
+    box-shadow: var(--main-shadow);
+  }
+  aside.opened {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    width: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  aside {
+    width: 70%;
+  }
+}
+
+aside .close {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  aside .close {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+  }
+  aside .close:hover {
+    color: #000;
+  }
+}
+
+.filter-box {
+  margin-top: 20px;
+}
+
+.filter-box h4 {
+  font-weight: 500;
+  color: #17376a;
+  margin-bottom: 10px;
+}
+
+.check-filter {
+  padding-left: 7px;
+  margin-block: 10px;
+}
+
+.check-filter label {
+  position: relative;
+  cursor: pointer;
+}
+
+.check-filter label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  border-radius: 1.5px;
+  border: 1px solid #555;
+  width: 14px;
+  height: 14px;
+}
+
+.check-filter input:checked + label::before {
+  background-color: var(--main-color);
+  border-color: transparent;
+}
+
+.check-filter input {
+  opacity: 0;
+}
+
+@media (min-width: 992px) {
+  .overlay.overlay-f {
+    display: none;
+  }
+}
+
+.range .fields {
+  display: flex;
+  gap: 10px;
+}
+
+.range form input[type="number"] {
+  border: 1px solid #555;
+  outline: none;
+  padding: 5px 10px;
+  width: 80px;
+  border-radius: 3px;
+}
+
+.range input[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 7px 10px;
+  margin-top: 10px;
+}
