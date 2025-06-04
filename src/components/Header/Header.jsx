@@ -1,4 +1,3 @@
-import { UseForm } from "react-hook-form";
 import "./Header.css";
 import SearchFn from "../SearchFn/SearchFn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

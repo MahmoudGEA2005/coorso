@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
+import SideBar from "./components/SideBar/SideBar";
+import Content from "./components/Content/Content";
+import Enrolled from "./components/Enrolled/Enrolled";
+import Toolkit from "./components/ToolKit/Toolkit";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+  const [coursesOpened, setCoursesOpened] = useState(false);
+  const [filtersOpened, setFiltersOpened] = useState(false);
+  const [myCourses, setMyCourses] = useState(
+    localStorage.getItem("courses")
+      ? JSON.parse(localStorage.getItem("courses"))
+      : []
+  );
+  const [instructor, setInstructor] = useState([]);
+  const [searchData, setSearchData] = useState();
+  const [toolkit, setToolKit] = useState([false, ""]);
+  const [priceFilter, setPriceFilter] = useState([]);
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Toolkit
+        appear={toolkit[0]}
+        theme={toolkit[1] == "success" ? "success" : "fail"}
+      >
+        {toolkit[1] == "success"
+          ? "Course's Enrolled !"
+          : "You Are Allready Enrolled"}
+      </Toolkit>
+      <Header
+        controlEnrolled={setCoursesOpened}
+        changeSearch={setSearchData}
+      ></Header>
+      <main className="container">
+        <SideBar
+          includeinstructor={setInstructor}
+          currentInstructors={instructor}
+          isOpened={filtersOpened}
+          open={setFiltersOpened}
+          setPriceFilter={setPriceFilter}
+        ></SideBar>
+        <Content
+          addCourse={setMyCourses}
+          instructorFilter={instructor}
+          searchFilter={searchData}
+          toolkitController={setToolKit}
+          setFiltersOpened={setFiltersOpened}
+          priceFilter={priceFilter}
+        ></Content>
+      </main>
+      {coursesOpened || filtersOpened ? (
+        <div className={`overlay ${filtersOpened ? "overlay-f" : ""}`}></div>
+      ) : (
+        ""
+      )}
+      <Enrolled
+        open={coursesOpened}
+        close={setCoursesOpened}
+        courses={myCourses}
+        deleteCourse={setMyCourses}
+      ></Enrolled>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
