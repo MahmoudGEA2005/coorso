@@ -9,4 +9,4 @@ This is a simple React-based application that allows users to filter courses by 
 - 🔍 Real-time search functionality
 - ⚛️ Built with React and modern functional components
 - 💡 Clean, readable, and maintainable code
-
+Note: I to access enrolled courses, click on the code icon on the nav bar
